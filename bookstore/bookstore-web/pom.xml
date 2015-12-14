@@ -6,5 +6,5 @@
 		<artifactId>bookstore</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>bookstore-ear</artifactId>
+	<artifactId>bookstore-web</artifactId>
 </project>
