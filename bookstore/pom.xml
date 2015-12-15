@@ -66,6 +66,20 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>releases</name>
+			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>nexus-snapshot</id>
+			<name>snapshots</name>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<modules>
 		<module>bookstore-ejb</module>
 		<module>bookstore-web</module>
