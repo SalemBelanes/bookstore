@@ -5,12 +5,67 @@
 	<artifactId>bookstore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<version.javaee>7.0</version.javaee>
+
+		<version.google.guava>18.0</version.google.guava>
+
+		<version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
+		<version.wildfly>9.0.1.Final</version.wildfly>
+		<version.hibernate>4.3.10.Final</version.hibernate>
+		<primefaces.version>5.3</primefaces.version>
+		<commons.io.version>1.4</commons.io.version>
+		<commons.fileupload.version>1.2.1</commons.fileupload.version>
+
+		<version.compiler.plugin>3.1</version.compiler.plugin>
+		<version.ear.plugin>2.10</version.ear.plugin>
+		<version.war.plugin>2.5</version.war.plugin>
+		<version.ejb.plugin>2.4</version.ejb.plugin>
+		<version.surefire.plugin>2.16</version.surefire.plugin>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.bookstore</groupId>
+				<artifactId>bookstore-ejb</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>com.bookstore</groupId>
+				<artifactId>bookstore-web</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>war</type>
+			</dependency>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${version.javaee}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>${primefaces.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons.io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons.fileupload.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<modules>
 		<module>bookstore-ejb</module>
 		<module>bookstore-web</module>
