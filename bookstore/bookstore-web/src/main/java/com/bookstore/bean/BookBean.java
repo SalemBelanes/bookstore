@@ -7,14 +7,14 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import com.bookstore.domain.Book;
-import com.bookstore.services.BookRemoteService;
+import com.bookstore.services.EntityRemoteService;
 
 @ManagedBean
 @ViewScoped
 public class BookBean {
 
 	@EJB
-	private BookRemoteService bookService;
+	private EntityRemoteService<Book> bookService;
 	private List<Book> bookList;
 
 	public List<Book> findAllBooks() {
