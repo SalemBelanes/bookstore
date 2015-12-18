@@ -5,7 +5,7 @@
 	<artifactId>bookstore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -14,7 +14,7 @@
 
 		<version.google.guava>18.0</version.google.guava>
 
-		<version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
+		<version.wildfly.maven.plugin>1.1.0.Alpha5</version.wildfly.maven.plugin>
 		<version.wildfly>9.0.1.Final</version.wildfly>
 		<version.hibernate>4.3.10.Final</version.hibernate>
 		<primefaces.version>5.3</primefaces.version>
@@ -68,15 +68,12 @@
 
 	<distributionManagement>
 		<repository>
-			<id>nexus-releases</id>
-			<name>releases</name>
-			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+			<id>bookstore-releases</id>
+			<url>http://localhost:8081/nexus/content/repositories/bookstore-releases</url>
 		</repository>
-
 		<snapshotRepository>
-			<id>nexus-snapshot</id>
-			<name>snapshots</name>
-			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+			<id>bookstore-snapshots</id>
+			<url>http://localhost:8081/nexus/content/repositories/bookstore-snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
 

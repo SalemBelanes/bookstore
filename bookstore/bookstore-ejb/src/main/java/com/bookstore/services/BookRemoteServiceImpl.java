@@ -8,10 +8,10 @@ import javax.persistence.TypedQuery;
 import com.bookstore.domain.Book;
 
 @Stateless
-public class BookRemoteServiceImpl extends GenericRemoteService<Book> {
+public class BookRemoteServiceImpl extends GenericRemoteService<Book> implements BookRemoteService {
 
-	public BookRemoteServiceImpl(Class<Book> clazz) {
-		super(clazz);
+	public BookRemoteServiceImpl() {
+		super(Book.class);
 	}
 
 	public List<Book> findBooksByCategory(String category) {

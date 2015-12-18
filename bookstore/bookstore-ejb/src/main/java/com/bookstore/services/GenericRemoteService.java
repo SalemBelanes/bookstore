@@ -15,7 +15,7 @@ public class GenericRemoteService<T> implements EntityRemoteService<T> {
 	protected EntityManager entityManager;
 	private final Class<T> clazz;
 
-	public GenericRemoteService(Class<T> clazz) {
+	protected GenericRemoteService(Class<T> clazz) {
 		this.clazz = clazz;
 	}
 
