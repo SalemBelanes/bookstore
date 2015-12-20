@@ -39,7 +39,7 @@
 				<version>${version.wildfly.maven.plugin}</version>
 				<configuration>
 					<filename>${project.artifactId}.ear</filename>
-					<port>9090</port>
+					<port>9995</port>
 				</configuration>
 				<executions>
 					<execution>
