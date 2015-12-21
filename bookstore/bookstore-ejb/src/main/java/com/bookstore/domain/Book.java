@@ -1,6 +1,7 @@
 package com.bookstore.domain;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -18,8 +19,19 @@ public class Book implements Serializable {
 	private Integer id;
 	private String title;
 	private String description;
-	private Date publicationDate;
+	private LocalDateTime publicationDate;
 	private String category;
+
+	public Book() {
+		
+	}
+
+	public Book(String title, String description, LocalDateTime publicationDate, String category) {
+		this.title = title;
+		this.description = description;
+		this.publicationDate = publicationDate;
+		this.category = category;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,12 +59,12 @@ public class Book implements Serializable {
 		this.description = description;
 	}
 
-	public Date getPublicationDate() {
+	public LocalDateTime getPublicationDate() {
 		return publicationDate;
 	}
 
-	public void setPublicationDate(Date datePublication) {
-		this.publicationDate = datePublication;
+	public void setPublicationDate(LocalDateTime publicationDate) {
+		this.publicationDate = publicationDate;
 	}
 
 	public String getCategory() {
