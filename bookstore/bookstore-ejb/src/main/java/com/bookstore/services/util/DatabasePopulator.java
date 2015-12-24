@@ -28,7 +28,7 @@ public class DatabasePopulator {
 
 	@PostConstruct
 	public void createData() {
-		userService.create(new User("George", "Orwell", "gorwell@bookstore.com", "password"));
+		userService.create(new User("George", "Orwell", "gorwell@bookstore.com", "pw"));
 		bookService.create(new Book("1984", "Sci-fi book", toDate("24/12/2015 17:40:00"), "Sci-fi"));
 	}
 
