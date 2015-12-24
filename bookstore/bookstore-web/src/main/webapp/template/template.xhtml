@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:title>
+		<ui:insert name="pageTitle"></ui:insert>
+	</h:title>
+	<h:outputStylesheet library="css" name="templatemo_style.css" />
+</h:head>
+<body>
+	<!--  Free CSS Templates from www.templatemo.com -->
+	<div id="templatemo_container">
+		<!-- menu -->
+		<ui:include src="menu.xhtml" />
+		<div id="templatemo_header">
+			<div id="templatemo_special_offers">
+				<p>
+					<span>25%</span> discounts for purchase over $80
+				</p>
+				<a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+			</div>
+			<div id="templatemo_new_books">
+				<ul>
+					<li>Suspen disse</li>
+					<li>Maece nas metus</li>
+					<li>In sed risus ac feli</li>
+				</ul>
+				<a href="subpage.html" style="margin-left: 50px;">Read more...</a>
+			</div>
+		</div>
+		<!-- end of header -->
+		<!-- end menu -->
+		<div id="templatemo_content">
+			<!-- content left -->
+			<ui:include src="content_left.xhtml" />
+			<!-- end content left -->
+			<!-- left content right -->
+			<ui:include src="content_right.xhtml" />
+			<!-- end content right -->
+			<div class="cleaner_with_height">&nbsp;</div>
+		</div>
+		<!-- end of content -->
+
+		<ui:include src="footer.xhtml" />
+		<!-- end of footer -->
+	</div>
+	<!-- end of container -->
+	<div align="center"></div>
+</body>
+</html>
