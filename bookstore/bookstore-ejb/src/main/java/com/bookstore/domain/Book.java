@@ -21,6 +21,16 @@ public class Book implements Serializable {
 	private Date publicationDate;
 	private String category;
 
+	public Book() {
+	}
+
+	public Book(String title, String description, Date publicationDate, String category) {
+		this.title = title;
+		this.description = description;
+		this.publicationDate = publicationDate;
+		this.category = category;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
