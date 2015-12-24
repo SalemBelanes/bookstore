@@ -15,8 +15,18 @@ public class User {
 	private Integer id;
 	private String firstName;
 	private String lastName;
-	private String login;
+	private String email;
 	private String password;
+
+	public User() {		
+	}
+
+	public User(String firstName, String lastName, String login, String password) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = login;
+		this.password = password;
+	}
 
 	public Integer getId() {
 		return id;
@@ -42,12 +52,12 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
