@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bookstore.domain.User;
+import com.bookstore.domain.Person;
 
 @WebFilter("/views/*")
 public class LoginFilter implements Filter {
@@ -27,7 +27,7 @@ public class LoginFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-		User currentUser = (User) request.getSession().getAttribute("user");
+		Person currentUser = (Person) request.getSession().getAttribute("user");
 		if (currentUser != null) {
 			filterChain.doFilter(request, response);
 		} else if (request.getRequestURL().toString().contains("login.jsf")) {

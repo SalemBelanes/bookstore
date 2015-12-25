@@ -10,6 +10,7 @@ import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
+import com.bookstore.domain.Admin;
 import com.bookstore.domain.Book;
 import com.bookstore.domain.User;
 import com.bookstore.services.BookRemoteService;
@@ -29,6 +30,7 @@ public class DatabasePopulator {
 	@PostConstruct
 	public void createData() {
 		userService.create(new User("George", "Orwell", "gorwell@bookstore.com", "pw"));
+		userService.create(new Admin("Admin1FN", "Admin1LN", "admin1@bookstore.com", "pw"));
 		bookService.create(new Book("1984", "Sci-fi book", toDate("24/12/2015 17:40:00"), "Sci-fi"));
 	}
 

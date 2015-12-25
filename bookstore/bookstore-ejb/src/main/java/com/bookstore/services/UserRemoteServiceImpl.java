@@ -5,21 +5,21 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.TypedQuery;
 
-import com.bookstore.domain.User;
+import com.bookstore.domain.Person;
 
 @Stateless
-public class UserRemoteServiceImpl extends GenericRemoteService<User> implements UserRemoteService {
+public class UserRemoteServiceImpl extends GenericRemoteService<Person> implements UserRemoteService {
 
 	public UserRemoteServiceImpl() {
-		super(User.class);
+		super(Person.class);
 	}
 
 	@Override
-	public User findUser(String email, String password) {
-		TypedQuery<User> q = entityManager
-				.createQuery("select u from User u where u.email=?0 and u.password=?1", User.class)
+	public Person findUser(String email, String password) {
+		TypedQuery<Person> q = entityManager
+				.createQuery("select u from Person u where u.email=?0 and u.password=?1", Person.class)
 				.setParameter(0, email).setParameter(1, password);
-		List<User> list = q.getResultList();
+		List<Person> list = q.getResultList();
 		if (list.isEmpty()) {
 			return null;
 		}

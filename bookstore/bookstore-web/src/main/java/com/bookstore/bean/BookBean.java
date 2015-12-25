@@ -3,7 +3,6 @@ package com.bookstore.bean;
 import java.util.List;
 
 import javax.ejb.EJB;
-import javax.ejb.Init;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -21,6 +20,7 @@ public class BookBean {
 	@EJB
 	private BookRemoteService bookService;
 	private List<Book> bookList;
+	private Book book;
 
 	public String init() {
 		if (FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user") == null) {
@@ -43,6 +43,18 @@ public class BookBean {
 
 	public void setUserBean(UserBean userBean) {
 		this.userBean = userBean;
+	}
+
+	public void deleteSelectedBook() {
+		bookService.remove(book);
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
 	}
 
 }

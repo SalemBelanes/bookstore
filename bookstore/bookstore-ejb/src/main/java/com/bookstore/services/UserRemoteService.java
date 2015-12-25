@@ -2,10 +2,10 @@ package com.bookstore.services;
 
 import javax.ejb.Remote;
 
-import com.bookstore.domain.User;
+import com.bookstore.domain.Person;
 
 @Remote
-public interface UserRemoteService extends EntityRemoteService<User> {
+public interface UserRemoteService extends EntityRemoteService<Person> {
 
-	User findUser(String email, String password);
+	Person findUser(String email, String password);
 }

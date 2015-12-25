@@ -41,7 +41,7 @@ public class GenericRemoteService<T> implements EntityRemoteService<T> {
 
 	public boolean remove(T entity) {
 		try {
-			entityManager.remove(entity);
+			entityManager.remove(entityManager.merge(entity));
 		} catch (IllegalArgumentException | TransactionRequiredException ex) {
 			return false;
 		}
