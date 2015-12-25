@@ -14,6 +14,7 @@ public class BookRemoteServiceImpl extends GenericRemoteService<Book> implements
 		super(Book.class);
 	}
 
+	@Override
 	public List<Book> findBooksByCategory(String category) {
 		TypedQuery<Book> query = entityManager.createQuery("select b from Book p where b.category=:c", Book.class);
 		query.setParameter("c", category);
