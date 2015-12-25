@@ -4,35 +4,40 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 
-<body>
-	<h:form>
-		<h:dataTable border="1" value="#{bookBean.bookList}" var="b">
-			<h:column id="columnTitle">
-				<f:facet name="header">
-					<h:outputText value="Title"></h:outputText>
-				</f:facet>
-				<h:outputText value="#{b.title}" />
-			</h:column>
-			<h:column id="columnDescription">
-				<f:facet name="header">
-					<h:outputText value="Description"></h:outputText>
-				</f:facet>
-				<h:outputText value="#{b.description}" />
-			</h:column>
-			<h:column id="columnPublicationDate">
-				<f:facet name="header">
-					<h:outputText value="PublicationDate"></h:outputText>
-				</f:facet>
-				<h:outputText value="#{b.publicationDate}" />
-			</h:column>
-			<h:column id="columnCategory">
-				<f:facet name="header">
-					<h:outputText value="Category"></h:outputText>
-				</f:facet>
-				<h:outputText value="#{b.category}" />
-			</h:column>
-		</h:dataTable>
-	</h:form>
-</body>
-
+<ui:composition template="/views/templates/template.xhtml">
+	<ui:define name="pageTitle">Login</ui:define>
+	<ui:define name="pageHeader">Welcome to the Bookstore</ui:define>
+	<ui:define name="body">
+		<h:outputText value="Bookstore' Library" />
+		<h:form>
+			<h:dataTable border="1" value="#{bookBean.bookList}" var="b">
+				<h:column id="columnTitle">
+					<f:facet name="header">
+						<h:outputText value="Title"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{b.title}" />
+				</h:column>
+				<h:column id="columnDescription">
+					<f:facet name="header">
+						<h:outputText value="Description"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{b.description}" />
+				</h:column>
+				<h:column id="columnPublicationDate">
+					<f:facet name="header">
+						<h:outputText value="PublicationDate"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{b.publicationDate}" />
+				</h:column>
+				<h:column id="columnCategory">
+					<f:facet name="header">
+						<h:outputText value="Category"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{b.category}" />
+				</h:column>
+			</h:dataTable>
+			<h:commandButton action="#{bookBean.userBean.logOut()}" value="Log out" />
+		</h:form>
+	</ui:define>
+</ui:composition>
 </html>

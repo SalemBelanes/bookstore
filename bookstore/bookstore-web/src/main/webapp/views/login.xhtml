@@ -17,7 +17,7 @@
 				<h:inputSecret value="#{userBean.currentUser.password}" />
 				<h:commandButton action="#{userBean.authenticate()}" value="Login" />
 			</h:panelGrid>
-
+			<h:messages style="color:red" />
 		</h:form>
 	</ui:define>
 </ui:composition>
