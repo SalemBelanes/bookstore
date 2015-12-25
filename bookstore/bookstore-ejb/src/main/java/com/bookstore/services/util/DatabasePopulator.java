@@ -34,7 +34,7 @@ public class DatabasePopulator {
 		bookService.create(new Book("1984", "Sci-fi book", toDate("24/12/2015 17:40:00"), "Sci-fi"));
 	}
 
-	public Date toDate(String formattedDate) {
+	public static Date toDate(String formattedDate) {
 		DateFormat df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM, Locale.FRANCE);
 		Date date = null;
 		try {

@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/views/templates/template.xhtml">
 	<ui:define name="pageTitle">Admin console</ui:define>
@@ -47,6 +48,25 @@
 					</h:commandButton>
 				</h:column>
 			</h:dataTable>
+			<h:commandButton action="#{bookBean.displayForm()}" value="Add Book" />
+
+			<h:panelGrid columns="2" rendered="#{bookBean.formDisplayed}">
+				<h:outputText value="Title" />
+				<h:inputText value="#{bookBean.book.title}" />
+				<h:outputText value="Description" />
+				<h:inputText value="#{bookBean.book.description}" />
+				<h:outputText value="Category" />
+				<h:inputText value="#{bookBean.book.category}" />
+				<!-- 				<h:outputText value="category" /> -->
+				<!-- <h:selectOneMenu value="#{productBean.categoryInMenu}"
+					converter="cc">
+					<f:selectItem itemLabel="please select one" />
+					<f:selectItems value="#{productBean.categories}" var="c"
+						itemLabel="#{c.name}" itemValue="#{c}"></f:selectItems>
+				</h:selectOneMenu> -->
+				<h:commandButton action="#{bookBean.addBook()}" value="Save" />
+				<h:commandButton action="#{bookBean.cancel()}" value="Cancel" />
+			</h:panelGrid>
 			<h:commandButton action="#{bookBean.userBean.logOut()}"
 				value="Log out" />
 		</h:form>
